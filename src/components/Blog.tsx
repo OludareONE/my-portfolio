@@ -4,20 +4,18 @@ import { useState } from "react";
 
 const posts = [
   {
-    title: "Why I switched from CRA to Next.js App Router",
-    excerpt:
-      "After years of Create React App, I made the jump to Next.js App Router. Here is what changed, what broke, and what I will never go back on.",
-    tag: "Next.js",
-    tagColor: "#38bdf8",
-    date: "April 2025",
+    title: "Are Developers Still Coding? Inside the Rise of AI-Assisted Development",
+    excerpt: 
+      "Software development is changing fast.",
+    date: "April 2026",
     readTime: "5 min read",
     slug: "cra-to-nextjs",
     featured: true,
   },
   {
-    title: "Building scalable REST APIs with Node and Postgres",
+    title: "AI That Doesn’t Just Answer — It Acts: Understanding Agentic AI",
     excerpt:
-      "A deep dive into structuring Node.js backends that can grow with your product — from routing to connection pooling to query optimization.",
+      "In the past, AI tools responded to prompts. You asked a question, and they answered. Now, AI is starting to act.",
     tag: "Backend",
     tagColor: "#34d399",
     date: "March 2025",
@@ -26,20 +24,20 @@ const posts = [
     featured: true,
   },
   {
-    title: "What I learned shipping 20 projects in 2 years",
+    title: "How AI Is Reshaping the Way I Build Web Applications",
     excerpt:
-      "Lessons from two years of building, launching, and sometimes failing. What I would do differently and what made the biggest impact.",
+      "AI has changed how I approach web development.",
     tag: "Career",
     tagColor: "#fb923c",
-    date: "February 2025",
+    date: "February 2026",
     readTime: "6 min read",
     slug: "20-projects-lessons",
     featured: true,
   },
   {
-    title: "TypeScript tips that actually save time",
+    title: "Why Speed Is Everything: Edge Computing and the Modern Web",
     excerpt:
-      "Not the basics you have read a hundred times. These are the patterns I reach for every day that genuinely speed up my workflow.",
+      "Users expect websites to be fast—instantly fast.",
     tag: "TypeScript",
     tagColor: "#a78bfa",
     date: "January 2025",
@@ -48,10 +46,10 @@ const posts = [
     featured: false,
   },
   {
-    title: "Docker for developers who just want it to work",
+    title: "AI Is Powerful—But Is It Safe? The New Cybersecurity Challenge",
     excerpt:
-      "A no-nonsense guide to containerising your full-stack app without spending three hours debugging networking issues.",
-    tag: "DevOps",
+      "As AI becomes more powerful, it also introduces new risks.",
+    tag: "AI",
     tagColor: "#f472b6",
     date: "December 2024",
     readTime: "7 min read",

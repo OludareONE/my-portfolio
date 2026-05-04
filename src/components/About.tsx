@@ -2,27 +2,27 @@
 
 const timeline = [
   {
-    year: "2021",
-    title: "Computer Science, BSc",
-    subtitle: "University of X",
-    color: "#a78bfa",
-  },
-  {
-    year: "2022",
-    title: "Junior Developer",
-    subtitle: "Your First Company",
+    year: "2007",
+    title: "Plant Science",
+    subtitle: "Olabisi Onabanjo University, Nigeria",
     color: "#38bdf8",
   },
   {
-    year: "2023",
-    title: "Mid-level Developer",
-    subtitle: "Your Second Company",
+    year: "2015",
+    title: "Molecular Biologist, MSc",
+    subtitle: "University of Ibadan, Nigeria",
+    color: "#a78bfa",
+  },
+  {
+    year: "2018 - 2024",
+    title: "Biologist",
+    subtitle: "University of Medical Sciences, Nigeria",
     color: "#34d399",
   },
   {
-    year: "2024",
-    title: "Senior Developer",
-    subtitle: "Your Current Company",
+    year: "2024 - 2026",
+    title: "Web & Interactive Development",
+    subtitle: "Assiniboine College, Brandon",
     color: "#fb923c",
   },
 ];

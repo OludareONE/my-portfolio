@@ -6,27 +6,21 @@ import emailjs from "@emailjs/browser";
 const socials = [
   {
     label: "Email",
-    value: "hello@yourname.dev",
-    href: "mailto:hello@yourname.dev",
+    value: "adeneyeoludare@gmail.com",
+    href: "mailto:adeneyeoludare@gmail.com",
     color: "#a78bfa",
   },
   {
     label: "GitHub",
-    value: "github.com/yourname",
-    href: "https://github.com/yourname",
+    value: "github.com/oludareONE",
+    href: "https://github.com/oludareONE",
     color: "#38bdf8",
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com/in/yourname",
-    href: "https://linkedin.com/in/yourname",
+    value: "linkedin.com/in/oludare-adenye",
+    href: "https://linkedin.com/in/oludare-adeneye",
     color: "#34d399",
-  },
-  {
-    label: "Twitter",
-    value: "twitter.com/yourname",
-    href: "https://twitter.com/yourname",
-    color: "#fb923c",
   },
 ];
 
