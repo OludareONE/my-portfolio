@@ -99,7 +99,7 @@ export default function Footer() {
 
 /* Styles */
 
-const logoStyle = {
+const logoStyle: React.CSSProperties = {
   background: "linear-gradient(90deg, #a78bfa, #38bdf8, #34d399)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
@@ -115,7 +115,7 @@ const descriptionStyle = {
   maxWidth: "220px",
 };
 
-const sectionTitleStyle = {
+const sectionTitleStyle: React.CSSProperties = {
   fontSize: "11px",
   color: "rgba(255,255,255,0.25)",
   textTransform: "uppercase",
@@ -123,7 +123,7 @@ const sectionTitleStyle = {
   marginBottom: "16px",
 };
 
-const listStyle = {
+const listStyle: React.CSSProperties = {
   listStyle: "none",
   display: "flex",
   flexDirection: "column",
@@ -132,7 +132,7 @@ const listStyle = {
   margin: 0,
 };
 
-const linkStyle = {
+const linkStyle: React.CSSProperties = {
   fontSize: "13px",
   color: "rgba(255,255,255,0.4)",
   textDecoration: "none",
