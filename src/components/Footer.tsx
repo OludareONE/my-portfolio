@@ -108,7 +108,7 @@ const logoStyle: React.CSSProperties = {
   marginBottom: "12px",
 };
 
-const descriptionStyle = {
+const descriptionStyle: React.CSSProperties = {
   fontSize: "13px",
   color: "rgba(255,255,255,0.35)",
   lineHeight: 1.7,
@@ -139,12 +139,12 @@ const linkStyle: React.CSSProperties = {
   transition: "color 0.2s",
 };
 
-const mutedTextStyle = {
+const mutedTextStyle: React.CSSProperties = {
   fontSize: "12px",
   color: "rgba(255,255,255,0.2)",
 };
 
-const bottomBarStyle = {
+const bottomBarStyle: React.CSSProperties = {
   borderTop: "0.5px solid rgba(255,255,255,0.06)",
   paddingTop: "24px",
   display: "flex",
