@@ -4,6 +4,29 @@ import { useState } from "react";
 
 const projects = [
   {
+    title: "Brandon Salutes",
+    description:
+      "A website redesign for NGO that bridges the gap between veterans and civilians",
+    tags: ["WordPress", "PHP"],
+    color: "#38bdf8",
+    emoji: "🏘️",
+    live: " https://assiniboinecreative.media/brandonsalutes/",
+    featured: true,
+  },
+
+  {
+    title: "Nyama",
+    description:
+      "A a full-stack web application built with the MERN stack (MongoDB, Express, React, Node.js). It bridges the gap between discovering recipes and grocery shopping. Users can browse and save community recipes, then generate a personalised weekly grocery list, with all ingredients automatically combined and grouped by store section",
+    tags: ["React", "Chakra UI", "Axios", "Vite", "NodeJS", "Express.js", "Mongoose"],
+    color: "#38bdf8",
+    emoji: "🍨",
+    live: " https://nyama-frontend.onrender.com",
+    github: " https://github.com/lkmandy/recipe_mern_app",
+    featured: true,
+  },
+
+  {
     title: "WOW_G; an E-commerce site.",
     description:
       "RESTful backend with inventory management, and order tracking. Handles multiple requests per minute.",
@@ -54,7 +77,7 @@ const projects = [
     tags: ["Next.js", "Tailwind", "TypeScript"],
     color: "#fb923c",
     emoji: "🎨",
-    live: "https://yourproject.com",
+    live: "https://https://my-portfolio-5lpu.vercel.app/",
     github: "https://github.com/yourname/project",
     featured: false,
   },
