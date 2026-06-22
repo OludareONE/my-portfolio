@@ -70,17 +70,6 @@ const projects = [
     github: "https://github.com/OludareONE/Brandoncleaners.git",
     featured: true,
   },
-  {
-    title: "Dev Portfolio",
-    description:
-      "This very portfolio — built from scratch with Next.js, Tailwind, and Framer Motion.",
-    tags: ["Next.js", "Tailwind", "TypeScript"],
-    color: "#fb923c",
-    emoji: "🎨",
-    live: "https://https://my-portfolio-5lpu.vercel.app/",
-    github: "https://github.com/yourname/project",
-    featured: false,
-  },
 ];
 
 export default function Projects() {
