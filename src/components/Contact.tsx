@@ -1,6 +1,7 @@
 "use client";
+
 import { useState } from "react";
-import React from "react";
+
 const socials = [
   {
     label: "Email",
@@ -16,53 +17,70 @@ const socials = [
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com/in/oludare-adenye",
+    value: "linkedin.com/in/oludare-adeneye",
     href: "https://linkedin.com/in/oludare-adeneye",
     color: "#34d399",
   },
 ];
+
+const labelStyle: React.CSSProperties = {
+  fontSize: "12px",
+  color: "rgba(255,255,255,0.35)",
+  display: "block",
+  marginBottom: "8px",
+};
+
+const inputStyle: React.CSSProperties = {
+  width: "100%",
+  background: "rgba(255,255,255,0.05)",
+  border: "0.5px solid rgba(255,255,255,0.12)",
+  borderRadius: "10px",
+  padding: "10px 14px",
+  fontSize: "14px",
+  color: "#fff",
+  outline: "none",
+  fontFamily: "inherit",
+};
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-const handleSubmit = async () => {
-  if (!form.name || !form.email || !form.message) {
-    alert("Please fill in all fields.");
-    return;
-  }
-  setStatus("sending");
-  try {
-    const res = await fetch("https://formspree.io/f/mvzjoolb", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: form.name,
-        email: form.email,
-        message: form.message,
-      }),
-    });
-    const data = await res.json();
-    console.log("Formspree response:", data);
-    if (res.ok) {
-      setStatus("sent");
-      setForm({ name: "", email: "", message: "" });
-    } else {
-      console.error("Formspree error:", data);
+  const handleSubmit = async () => {
+    if (!form.name || !form.email || !form.message) {
+      alert("Please fill in all fields.");
+      return;
+    }
+    setStatus("sending");
+    try {
+      const res = await fetch("https://formspree.io/f/mvzjoolb", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json"},
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        }),
+      });
+      const data = await res.json();
+      console.log("Formspree response:", data);
+      if (res.ok) {
+        setStatus("sent");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        console.error("Formspree error:", data);
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error("Network error:", err);
       setStatus("error");
     }
-  } catch (err) {
-    console.error("Network error:", err);
-    setStatus("error");
-  }
-};
+  };
+
   return (
     <section
       id="contact"
@@ -75,47 +93,38 @@ const handleSubmit = async () => {
 
         {/* Header */}
         <div style={{ marginBottom: "56px" }}>
-          <div
-            style={{
-              fontSize: "12px",
-              color: "#a78bfa",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              marginBottom: "8px",
-            }}
-          >
-            Let's talk
+          <div style={{
+            fontSize: "12px",
+            color: "#a78bfa",
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
+            marginBottom: "8px",
+          }}>
+            I'm currently open to web development and technology-related opportunities. Whether you're looking for a developer, collaborator, or intern, I'd be happy to connect.
           </div>
-          <h2 style={{ fontSize: "32px", fontWeight: 500 }}>
-            Contact
-          </h2>
+          <h2 style={{ fontSize: "32px", fontWeight: 500 }}>Contact</h2>
         </div>
 
         {/* Grid */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "64px",
-          }}
-        >
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gap: "64px",
+        }}>
 
-          {/* LEFT */}
+          {/* Left */}
           <div>
-            <p
-              style={{
-                fontSize: "15px",
-                color: "rgba(255,255,255,0.5)",
-                lineHeight: 1.8,
-                marginBottom: "40px",
-                maxWidth: "400px",
-              }}
-            >
+            <p style={{
+              fontSize: "15px",
+              color: "rgba(255,255,255,0.5)",
+              lineHeight: 1.8,
+              marginBottom: "40px",
+              maxWidth: "400px",
+            }}>
               Open to full-time roles, freelance projects, and collaborations.
               Whether you have a question or just want to say hi, my inbox is always open.
             </p>
 
-            {/* Socials */}
             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {socials.map((s) => (
                 <a
@@ -123,69 +132,43 @@ const handleSubmit = async () => {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{
+                  style={{ display: "flex", alignItems: "center", gap: "14px", textDecoration: "none" }}
+                >
+                  <div style={{
+                    width: "36px",
+                    height: "36px",
+                    borderRadius: "10px",
+                    background: s.color + "18",
+                    border: `0.5px solid ${s.color}44`,
                     display: "flex",
                     alignItems: "center",
-                    gap: "14px",
-                    textDecoration: "none",
-                  }}
-                >
-                  <div
-                    style={{
-                      width: "36px",
-                      height: "36px",
-                      borderRadius: "10px",
-                      background: s.color + "18",
-                      border: `0.5px solid ${s.color}44`,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: "8px",
-                        height: "8px",
-                        borderRadius: "50%",
-                        background: s.color,
-                      }}
-                    />
+                    justifyContent: "center",
+                    flexShrink: 0,
+                  }}>
+                    <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: s.color }} />
                   </div>
-
                   <div>
-                    <div
-                      style={{
-                        fontSize: "11px",
-                        color: "rgba(255,255,255,0.3)",
-                        marginBottom: "2px",
-                      }}
-                    >
+                    <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.3)", marginBottom: "2px" }}>
                       {s.label}
                     </div>
-                    <div style={{ fontSize: "13px", color: s.color }}>
-                      {s.value}
-                    </div>
+                    <div style={{ fontSize: "13px", color: s.color }}>{s.value}</div>
                   </div>
                 </a>
               ))}
             </div>
           </div>
 
-          {/* RIGHT — FORM */}
-          <div
-            style={{
-              background: "rgba(255,255,255,0.03)",
-              border: "0.5px solid rgba(255,255,255,0.08)",
-              borderRadius: "16px",
-              padding: "32px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "16px",
-            }}
-          >
+          {/* Right — Form */}
+          <div style={{
+            background: "rgba(255,255,255,0.03)",
+            border: "0.5px solid rgba(255,255,255,0.08)",
+            borderRadius: "16px",
+            padding: "32px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "16px",
+          }}>
 
-            {/* Name */}
             <div>
               <label style={labelStyle}>Your name</label>
               <input
@@ -198,7 +181,6 @@ const handleSubmit = async () => {
               />
             </div>
 
-            {/* Email */}
             <div>
               <label style={labelStyle}>Your email</label>
               <input
@@ -211,7 +193,6 @@ const handleSubmit = async () => {
               />
             </div>
 
-            {/* Message */}
             <div>
               <label style={labelStyle}>Your message</label>
               <textarea
@@ -224,28 +205,20 @@ const handleSubmit = async () => {
               />
             </div>
 
-            {/* Button */}
             <button
               onClick={handleSubmit}
               disabled={status === "sending" || status === "sent"}
               style={{
-                background:
-                  status === "sent"
-                    ? "rgba(52,211,153,0.2)"
-                    : "linear-gradient(90deg, #7c3aed, #2563eb)",
+                background: status === "sent"
+                  ? "rgba(52,211,153,0.2)"
+                  : "linear-gradient(90deg, #7c3aed, #2563eb)",
                 color: status === "sent" ? "#34d399" : "#fff",
-                border:
-                  status === "sent"
-                    ? "0.5px solid rgba(52,211,153,0.4)"
-                    : "none",
+                border: status === "sent" ? "0.5px solid rgba(52,211,153,0.4)" : "none",
                 padding: "12px",
                 borderRadius: "10px",
                 fontSize: "14px",
-                cursor:
-                  status === "sending" || status === "sent"
-                    ? "default"
-                    : "pointer",
                 fontWeight: 500,
+                cursor: status === "sending" || status === "sent" ? "default" : "pointer",
               }}
             >
               {status === "idle" && "Send message"}
@@ -253,28 +226,10 @@ const handleSubmit = async () => {
               {status === "sent" && "Message sent!"}
               {status === "error" && "Something went wrong — try again"}
             </button>
+
           </div>
         </div>
       </div>
     </section>
   );
 }
-
-/* Reusable styles */
-const labelStyle = {
-  fontSize: "12px",
-  color: "rgba(255,255,255,0.35)",
-  display: "block",
-  marginBottom: "8px",
-};
-
-const inputStyle = {
-  width: "100%",
-  background: "rgba(255,255,255,0.05)",
-  border: "0.5px solid rgba(255,255,255,0.12)",
-  borderRadius: "10px",
-  padding: "10px 14px",
-  fontSize: "14px",
-  color: "#fff",
-  outline: "none",
-};
