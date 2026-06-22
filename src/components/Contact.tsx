@@ -1,8 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import emailjs from "@emailjs/browser";
-
 const socials = [
   {
     label: "Email",
@@ -35,28 +32,29 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = async () => {
+const handleSubmit = async () => {
   if (!form.name || !form.email || !form.message) {
     alert("Please fill in all fields.");
     return;
   }
   setStatus("sending");
   try {
-    const result = await emailjs.send(
-      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-      {
-        from_name: form.name,
-        from_email: form.email,
+    const res = await fetch("https://formspree.io/f/mvzjoolb", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: form.name,
+        email: form.email,
         message: form.message,
-      },
-      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-    );
-    console.log("EmailJS result:", result);
-    setStatus("sent");
-    setForm({ name: "", email: "", message: "" });
-  } catch (error) {
-    console.error("EmailJS error:", error);
+      }),
+    });
+    if (res.ok) {
+      setStatus("sent");
+      setForm({ name: "", email: "", message: "" });
+    } else {
+      setStatus("error");
+    }
+  } catch {
     setStatus("error");
   }
 };
