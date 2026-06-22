@@ -36,28 +36,30 @@ export default function Contact() {
   };
 
   const handleSubmit = async () => {
-    if (!form.name || !form.email || !form.message) return;
-
-    setStatus("sending");
-
-    try {
-      await emailjs.send(
-        "service_miks64s",
-        "template_l67b9dh",
-        {
-          from_name: form.name,
-          from_email: form.email,
-          message: form.message,
-        },
-        "UA-v_0-4AFAN2SJnv"
-      );
-
-      setStatus("sent");
-      setForm({ name: "", email: "", message: "" });
-    } catch {
-      setStatus("error");
-    }
-  };
+  if (!form.name || !form.email || !form.message) {
+    alert("Please fill in all fields.");
+    return;
+  }
+  setStatus("sending");
+  try {
+    const result = await emailjs.send(
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+      {
+        from_name: form.name,
+        from_email: form.email,
+        message: form.message,
+      },
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+    );
+    console.log("EmailJS result:", result);
+    setStatus("sent");
+    setForm({ name: "", email: "", message: "" });
+  } catch (error) {
+    console.error("EmailJS error:", error);
+    setStatus("error");
+  }
+};
 
   return (
     <section

@@ -3,10 +3,21 @@
 import { useState } from "react";
 
 const projects = [
+   {
+    title: "Whitfield Drugs",
+    description:
+      "A website redesigned for a pharmaceutical company in collaboration with other developers",
+    tags: ["WordPress", "Elementor", "Crocoblock", "PHP"],
+    color: "#38bdf8",
+    emoji: "💊",
+    live: "https://whitfielddrugs.ca/",
+    featured: true,
+  },
+
   {
     title: "Brandon Salutes",
     description:
-      "A website redesign for NGO that bridges the gap between veterans and civilians",
+      "A website redesigned in collaboration with a fellow developer for an NGO that bridges the gap between veterans and civilians",
     tags: ["WordPress", "PHP"],
     color: "#38bdf8",
     emoji: "🏘️",
@@ -36,7 +47,7 @@ const projects = [
     featured: true,
   },
   {
-    title: "Nyama; a full-stack web application built with the MERN stack (MongoDB, Express, React, Node.js).",
+    title: "Nyama; a full-stack web application built in collaboration with a fellow developer with the MERN stack (MongoDB, Express, React, Node.js).",
     description:
       "A collaborative MERN stack project that bridges the gap between discovering recipes and grocery shopping. Users can browse and save community recipes, then generate a personalised weekly grocery list.",
     tags: ["MongoDB", "Express", "React", "NodeJS" , "Chakra UI", "Axios", "Vite", "Full-stack"],
@@ -44,7 +55,7 @@ const projects = [
     emoji: "🍨",
     live: "https://nyama-frontend.onrender.com",
     github: "https://github.com/lkmandy/recipe_mern_app",
-    featured: true,
+    featured: false,
   },
   {
     title: "Brandon Cleaners",
@@ -55,7 +66,7 @@ const projects = [
     emoji: "🛁",
     live: "https://brandoncleaners.onrender.com/#services",
     github: "https://github.com/OludareONE/Brandoncleaners.git",
-    featured: true,
+    featured: false,
   },
 ];
 

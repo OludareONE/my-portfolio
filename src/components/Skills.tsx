@@ -1,18 +1,15 @@
 "use client";
 
 const skills = [
+  { name: "WordPress", color: "#f472b6", category: "Frontend" },
   { name: "React", color: "#38bdf8", category: "Frontend" },
   { name: "Next.js", color: "#a78bfa", category: "Frontend" },
-  { name: "TypeScript", color: "#fb923c", category: "Frontend" },
   { name: "Tailwind CSS", color: "#38bdf8", category: "Frontend" },
   { name: "Node.js", color: "#34d399", category: "Backend" },
   { name: "PostgreSQL", color: "#f472b6", category: "Backend" },
-  { name: "REST APIs", color: "#34d399", category: "Backend" },
-  { name: "WordPress", color: "#f472b6", category: "Frontend" },
+  { name: "REST APIs", color: "#34d399", category: "Backend" }, 
   { name: "Docker", color: "#a78bfa", category: "DevOps" },
-  { name: "AWS", color: "#fb923c", category: "DevOps" },
   { name: "Git", color: "#34d399", category: "DevOps" },
-  { name: "CI/CD", color: "#38bdf8", category: "DevOps" },
 ];
 
 const categories = ["Frontend", "Backend", "DevOps"];
