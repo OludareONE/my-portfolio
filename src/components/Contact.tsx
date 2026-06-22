@@ -1,7 +1,6 @@
+"use client";
 import { useState } from "react";
 import React from "react";
-"use client";
-
 const socials = [
   {
     label: "Email",
