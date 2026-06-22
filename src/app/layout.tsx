@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Your Name | Full-stack Developer",
-  description: "Portfolio of Your Name — full-stack developer specializing in Next.js, Node.js, and TypeScript.",
+  description: "Oludare Adeneye—full-stack developer specializing in Next.js, Node.js, and TypeScript.",
   icons: {
     icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>",
   },
