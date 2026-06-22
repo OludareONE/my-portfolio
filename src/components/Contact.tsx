@@ -1,3 +1,5 @@
+import { useState } from "react";
+import React from "react";
 "use client";
 
 const socials = [
@@ -48,17 +50,20 @@ const handleSubmit = async () => {
         message: form.message,
       }),
     });
+    const data = await res.json();
+    console.log("Formspree response:", data);
     if (res.ok) {
       setStatus("sent");
       setForm({ name: "", email: "", message: "" });
     } else {
+      console.error("Formspree error:", data);
       setStatus("error");
     }
-  } catch {
+  } catch (err) {
+    console.error("Network error:", err);
     setStatus("error");
   }
 };
-
   return (
     <section
       id="contact"
