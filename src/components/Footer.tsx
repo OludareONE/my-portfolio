@@ -9,9 +9,9 @@ const footerLinks = [
 ];
 
 const socials = [
-  { label: "GitHub", href: "https://github.com/yourname" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/yourname" },
-  { label: "Twitter", href: "https://twitter.com/yourname" },
+  { label: "GitHub", href: "https://github.com/oludareONE" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/oludare-adeneye" },
+  { label: "Twitter", href: "https://x.com/adeneye_oludare" },
 ];
 
 export default function Footer() {
